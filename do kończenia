@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
+void generuj(short tab[],int n,short lim);
+
+int main()
+{
+    const int N = 1000;short tab[N];printf("Podaj liczb ̨e elementów: ");int n;
+    scanf("%d", &n);
+    if(n <= 0 || n > N) {printf("Liczba elementów musi by ́c z przedziału [1, %d\n]!", N);
+    return 1;}
+    srand(time(0));
+    int max=tab[0];
+    for(short *j = tab; *j < n; ++*j)
+    {*j = rand() % 999 + 1;
+    if(*j%2==1){
+     if(max<*j){
+        max=*j;
+}
+}
+}
+for(short *j = tab; *j < tab+n; ++j){
+    if(*j<=0){
+        continue;
+    }
+    else if(*j%2==1){
+        *j=3* *j+1;
+}
+}
+printf("%d",*j);
+}
