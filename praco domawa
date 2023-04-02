@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+int* mniejsza(int *a,int *b);
+int min(int *a,int *b);
+int funl(int *a,int*b);
+int zmiania(int *a,int*b);
+void zmiania2(int *a,int*b);
+int suma(int *a,int*b);
+int w(int a,int*r);
+int main()
+{
+    int a=10;
+    int b=2;
+    //printf("%d",*mniejsza(&a,&b));
+    //printf("%d",fun1(&a,&b));
+    //zmiania(&a,&b);
+    //zmiania2(&a,&b);
+    //printf("%d",suma(&a,&b));
+}
+int w(int n,int*w){
+int m;
+
+m=n;
+n=*w;
+*w=m;
+w=&n;}
+int suma(int *a,int*b){
+    int const suma=*a+*b;
+    return suma;
+}
+int* mniejsza(int *a,int *b){
+    if(*a>*b){
+            return b;
+    }
+    else{
+        return a;
+}
+}
+void zmiania2(int *a,int*b){
+    printf(" a=%d b=%d\n",*a,*b);
+    if(*b<*a){
+    int pom=*a;
+    *a=*b;
+    *b=pom;
+    printf(" a=%d b=%d",*a,*b);}
+}
+int zmiania(int *a,int*b){
+    printf(" a=%d b=%d",*a,*b);
+    int pom=*a;
+    *a=*b;
+    *b=pom;
+    printf(" a=%d b=%d",*a,*b);
+}
+
+int min(int *a,int *b){
+    if(*a>*b){
+        printf("%d",*b);
+    }
+    else{
+       printf("%d",*a);
+    }
+}
+
+int fun1(int* a, int* b) { //funkcja przyjmuje dwa wskaźniki
+    if(*a>*b){
+        return *b;
+    }
+    else {
+        return *a;
+    }
+}
