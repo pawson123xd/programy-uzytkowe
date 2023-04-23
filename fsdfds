@@ -78,4 +78,25 @@ size_t strlen(const char*s){
     }
     return len;
 }
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+size_t strlen(const char*s);
+char *strcat (char* strTo, const char* strFrom);
+int main()
+{
+    char str[30] = "jakis napis ";   // kopiujemy napis do tablicy
+    const char *strFrom = "test";   // zapisujemy wskaznik na napis
+
+    printf("%s",strcat (str, strFrom));
+
+    return 0;
+}
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+char s[20] = "katarzyna i "; // konieczna inicjalizacja
+printf("%s\n",strncat(s, "ala ma kota", 9));
+}
 
