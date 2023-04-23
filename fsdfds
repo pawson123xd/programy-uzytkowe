@@ -3,16 +3,20 @@
 char* strcpy(char*t,const char*s);
 int main()
 {
-    char c[]="ala ma kota";
+    char c[]="Pawels";
     char p[90]; //rozmiar!!
     strcpy(p,c);
     printf("%s",p);
     return 0;
 }
 char* strcpy(char *t,const char *s){
-    char *p = t;
-    while((*t++ =*s++));
-    return p;}
+    for(int i=0;i<*s;i++){
+        for(int j=1;j<=1;j++){
+            *(t+i)=*(s+i);
+        }
+        }
+    return t;
+}
 #include <stdio.h>
 #include <stdlib.h>
 char* strcpy(char*t,const char*s);
