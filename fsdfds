@@ -1,12 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 char* strcpy(char*t,const char*s);
+size_t strlen(const char*s);
+char* strncat(char* dest,const char* src,size_t n);
+char* strncpy(char* dest,const char* src,size_t n);
+char* strcat (char* dest, const char* src);
+char* strncat (char* dest, const char* src,size_t n);
 int main()
 {
     char c[]="Pawels";
     char p[90]; //rozmiar!!
+    char x[]=" i Piort";
+    printf("%ld\n",strlen(c));
+    strncpy(p,c,3);
+    printf("%s\n",p);
     strcpy(p,c);
-    printf("%s",p);
+    printf("%s\n",p);
+    //printf("%s\n",strcat(c,x));
+    printf("%s",strncat(c,x,2));
     return 0;
 }
 char* strcpy(char *t,const char *s){
@@ -15,18 +27,6 @@ char* strcpy(char *t,const char *s){
             *(t+i)=*(s+i);
         }
         }
-    return t;
-}
-#include <stdio.h>
-#include <stdlib.h>
-char* strcpy(char*t,const char*s);
-size_t strlen(const char*s);
-int main()
-{
-    char c[]="ala ma kota";
-    char p[90]; //rozmiar!!
-    printf("%zu",strlen(c));
-    return 0;
 }
 size_t strlen(const char*s){
     int len=0;
@@ -34,17 +34,6 @@ size_t strlen(const char*s){
         ++len;
     }
     return len;
-}
-#include <stdio.h>
-#include <stdlib.h>
-char* strncpy(char* dest,const char* src,size_t n);
-int main()
-{
-    char c[]="ala ma kota";
-    char p[90]; //rozmiar!!
-    strncpy(p,c,6);
-    printf("%s",p);
-    return 0;
 }
 char* strncpy(char* dest,const char* src,size_t n){
    for(int i=0;i<n;i++){
@@ -52,51 +41,3 @@ char* strncpy(char* dest,const char* src,size_t n){
    }
    return dest;
    }
-#include <stdio.h>
-#include <stdlib.h>
-char* strncat(char* dest,const char* src,size_t n);
-size_t strlen(const char*s);
-int main()
-{
-    char c[]="ala ma kota";
-    char p[90]; //rozmiar!!
-    strlen(c);
-    strncat(p,strlen(c),2);
-    printf("%s",p);
-    return 0;
-}
-char* strncat(char* dest,const char* src,size_t n){
-   for(int i=0+n;i<*src;i++){
-    *(dest+i) = *(src+i);
-   }
-   return dest;
-   }
-size_t strlen(const char*s){
-    int len=0;
-    while((*s++)){
-        ++len;
-    }
-    return len;
-}
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-size_t strlen(const char*s);
-char *strcat (char* strTo, const char* strFrom);
-int main()
-{
-    char str[30] = "jakis napis ";   // kopiujemy napis do tablicy
-    const char *strFrom = "test";   // zapisujemy wskaznik na napis
-
-    printf("%s",strcat (str, strFrom));
-
-    return 0;
-}
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-char s[20] = "katarzyna i "; // konieczna inicjalizacja
-printf("%s\n",strncat(s, "ala ma kota", 9));
-}
-
